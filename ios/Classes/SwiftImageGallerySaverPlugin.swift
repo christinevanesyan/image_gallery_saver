@@ -121,7 +121,7 @@ public class SwiftImageGallerySaverPlugin: NSObject, FlutterPlugin {
         var imageIds: [String] = []
         
         PHPhotoLibrary.shared().performChanges( {
-            let req = PHAssetChangeRequest.creationRequestForAssetFromImage(atFileURL: URL(string: url)!)
+//            let req = PHAssetChangeRequest.creationRequestForAssetFromImage(atFileURL: URL(string: url)!)
             if let imageId = req?.placeholderForCreatedAsset?.localIdentifier {
                 imageIds.append(imageId)
             }
