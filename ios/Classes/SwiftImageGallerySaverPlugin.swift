@@ -52,7 +52,7 @@ public class SwiftImageGallerySaverPlugin: NSObject, FlutterPlugin {
         var videoIds: [String] = []
         
         PHPhotoLibrary.shared().performChanges( {
-            let req = PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL.init(fileURLWithPath: path))
+            // let req = PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL.init(fileURLWithPath: path))
             if let videoId = req?.placeholderForCreatedAsset?.localIdentifier {
                 videoIds.append(videoId)
             }
@@ -84,7 +84,7 @@ public class SwiftImageGallerySaverPlugin: NSObject, FlutterPlugin {
         var imageIds: [String] = []
         
         PHPhotoLibrary.shared().performChanges( {
-            let req = PHAssetChangeRequest.creationRequestForAsset(from: image)
+            // let req = PHAssetChangeRequest.creationRequestForAsset(from: image)
             if let imageId = req.placeholderForCreatedAsset?.localIdentifier {
                 imageIds.append(imageId)
             }
@@ -121,7 +121,7 @@ public class SwiftImageGallerySaverPlugin: NSObject, FlutterPlugin {
         var imageIds: [String] = []
         
         PHPhotoLibrary.shared().performChanges( {
-//            let req = PHAssetChangeRequest.creationRequestForAssetFromImage(atFileURL: URL(string: url)!)
+            // let req = PHAssetChangeRequest.creationRequestForAssetFromImage(atFileURL: URL(string: url)!)
             if let imageId = req?.placeholderForCreatedAsset?.localIdentifier {
                 imageIds.append(imageId)
             }
