@@ -76,10 +76,10 @@ public class SwiftImageGallerySaverPlugin: NSObject, FlutterPlugin {
     }
     
     func saveImage(_ image: UIImage, isReturnImagePath: Bool) {
-        if !isReturnImagePath {
-            UIImageWriteToSavedPhotosAlbum(image, self, #selector(didFinishSavingImage(image:error:contextInfo:)), nil)
-            return
-        }
+        // if !isReturnImagePath {
+        //     UIImageWriteToSavedPhotosAlbum(image, self, #selector(didFinishSavingImage(image:error:contextInfo:)), nil)
+        //     return
+        // }
         
         var imageIds: [String] = []
         
@@ -112,9 +112,9 @@ public class SwiftImageGallerySaverPlugin: NSObject, FlutterPlugin {
     
     func saveImageAtFileUrl(_ url: String, isReturnImagePath: Bool) {
         if !isReturnImagePath {
-            if let image = UIImage(contentsOfFile: url) {
-                UIImageWriteToSavedPhotosAlbum(image, self, #selector(didFinishSavingImage(image:error:contextInfo:)), nil)
-            }
+            // if let image = UIImage(contentsOfFile: url) {
+            //     UIImageWriteToSavedPhotosAlbum(image, self, #selector(didFinishSavingImage(image:error:contextInfo:)), nil)
+            // }
             return
         }
         
