@@ -62,11 +62,11 @@ public class SwiftImageGallerySaverPlugin: NSObject, FlutterPlugin {
                     let assetResult = PHAsset.fetchAssets(withLocalIdentifiers: videoIds, options: nil)
                     if (assetResult.count > 0) {
                         let videoAsset = assetResult[0]
-                        PHImageManager().requestAVAsset(forVideo: videoAsset, options: nil) { (avurlAsset, audioMix, info) in
-                            if let urlStr = (avurlAsset as? AVURLAsset)?.url.absoluteString {
-                                self.saveResult(isSuccess: true, filePath: urlStr)
-                            }
-                        }
+                        // PHImageManager().requestAVAsset(forVideo: videoAsset, options: nil) { (avurlAsset, audioMix, info) in
+                        //     if let urlStr = (avurlAsset as? AVURLAsset)?.url.absoluteString {
+                        //         self.saveResult(isSuccess: true, filePath: urlStr)
+                        //     }
+                        // }
                     }
                 } else {
                     self.saveResult(isSuccess: false, error: self.errorMessage)
@@ -93,15 +93,15 @@ public class SwiftImageGallerySaverPlugin: NSObject, FlutterPlugin {
                 if (success && imageIds.count > 0) {
                     let assetResult = PHAsset.fetchAssets(withLocalIdentifiers: imageIds, options: nil)
                     if (assetResult.count > 0) {
-                        let imageAsset = assetResult[0]
-                        let options = PHContentEditingInputRequestOptions()
-                        options.canHandleAdjustmentData = { (adjustmeta)
-                            -> Bool in true }
-                        imageAsset.requestContentEditingInput(with: options) { [unowned self] (contentEditingInput, info) in
-                            if let urlStr = contentEditingInput?.fullSizeImageURL?.absoluteString {
-                                self.saveResult(isSuccess: true, filePath: urlStr)
-                            }
-                        }
+                        // let imageAsset = assetResult[0]
+                        // let options = PHContentEditingInputRequestOptions()
+                        // options.canHandleAdjustmentData = { (adjustmeta)
+                        //     -> Bool in true }
+                        // imageAsset.requestContentEditingInput(with: options) { [unowned self] (contentEditingInput, info) in
+                        //     if let urlStr = contentEditingInput?.fullSizeImageURL?.absoluteString {
+                        //         self.saveResult(isSuccess: true, filePath: urlStr)
+                        //     }
+                        // }
                     }
                 } else {
                     self.saveResult(isSuccess: false, error: self.errorMessage)
@@ -130,15 +130,15 @@ public class SwiftImageGallerySaverPlugin: NSObject, FlutterPlugin {
                 if (success && imageIds.count > 0) {
                     let assetResult = PHAsset.fetchAssets(withLocalIdentifiers: imageIds, options: nil)
                     if (assetResult.count > 0) {
-                        let imageAsset = assetResult[0]
-                        let options = PHContentEditingInputRequestOptions()
-                        options.canHandleAdjustmentData = { (adjustmeta)
-                            -> Bool in true }
-                        imageAsset.requestContentEditingInput(with: options) { [unowned self] (contentEditingInput, info) in
-                            if let urlStr = contentEditingInput?.fullSizeImageURL?.absoluteString {
-                                self.saveResult(isSuccess: true, filePath: urlStr)
-                            }
-                        }
+                        // let imageAsset = assetResult[0]
+                        // let options = PHContentEditingInputRequestOptions()
+                        // options.canHandleAdjustmentData = { (adjustmeta)
+                        //     -> Bool in true }
+                        // imageAsset.requestContentEditingInput(with: options) { [unowned self] (contentEditingInput, info) in
+                        //     if let urlStr = contentEditingInput?.fullSizeImageURL?.absoluteString {
+                        //         self.saveResult(isSuccess: true, filePath: urlStr)
+                        //     }
+                        // }
                     }
                 } else {
                     self.saveResult(isSuccess: false, error: self.errorMessage)
